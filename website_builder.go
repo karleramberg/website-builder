@@ -11,7 +11,7 @@ import (
 
 func main() {
 	// Exit if 4 arguments are not given
-	if len(os.Args) < 4 {
+	if len(os.Args) < 5 {
 		fmt.Println("USAGE: $ website_builder <markdown folder> <html folder> <template file> <replace token>")
 		return
 	}
