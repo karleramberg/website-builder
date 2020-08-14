@@ -9,11 +9,11 @@ import (
 	"strings"
 )
 
-const CONTENTTOKEN string = "#CONTENT#"
 func main() {
-	// Exit if 2 arguments are not given
-	if len(os.Args) < 3 {
-		fmt.Println("USAGE: $ website_builder <markdown folder> <html folder> <template file>")
+	// Exit if 4 arguments are not given
+	if len(os.Args) < 4 {
+		fmt.Println("USAGE: $ website_builder <markdown folder> <html folder> <template file> <replace token>")
+		return
 	}
 
 	inputFolder := os.Args[1]
@@ -25,6 +25,8 @@ func main() {
 		fmt.Println("ERROR: Template file not found or is protected")
 		return	
 	}
+
+	replaceToken := os.Args[4]
 	
 	// Walk through the root directory file by file
 	filepath.Walk(inputFolder, func(path string, info os.FileInfo, err error) error {
@@ -43,7 +45,7 @@ func main() {
 		html := string(markdown.ToHTML(md, nil, nil))
 
 		// Replace the content token with generated HTML
-		output := strings.Replace(string(template), CONTENTTOKEN, html, 1)	
+		output := strings.Replace(string(template), replaceToken, html, 1)	
 		ioutil.WriteFile(newPath, []byte(output), 0644)
 		return nil
 	})
