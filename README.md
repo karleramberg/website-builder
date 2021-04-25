@@ -12,5 +12,5 @@ $ ./websiteBuilder <markdown folder> <html folder> <html template> <replace toke
 
 Example for my personal site found [here](https://github.com/karleramberg/karleramberg.github.io):
 ```
-$ ./websiteBuilder markdown/ ./ assets/template.html CONTENT
+$ ./websiteBuilder assets/markdown/ ./ assets/template.html CONTENT
 ```
