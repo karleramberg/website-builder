@@ -4,7 +4,7 @@ Simple script for converting a folder of markdown files to a mirrored folder of 
 - Leaves other files in html folder alone, such as 'style.css'
 - Inserts new html into a specified template at the specified token
 
-Command line usage:
+## Usage:
 ```
 $ website_builder <markdown folder> <html folder> <html template> <replace token>
 ```
