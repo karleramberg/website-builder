@@ -8,7 +8,7 @@ Usage:
 $ website_builder <input folder> <output folder> <template file> <replace token>
 ```
 
-Example for my personal site found [here](https://github.com/karlramberg/karlramberg.github.io):
+Example for my [webpage](https://github.com/karlramberg/karlramberg.github.io):
 ```
 $ website_builder site/ docs/ template.html REPLACE_TOKEN
 ```
