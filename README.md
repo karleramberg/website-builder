@@ -1,6 +1,6 @@
 Script for building a static site
 - Grabs HTML files from the input folder
-- Sticks their content in an template file at the specified token
+- Sticks their content into a template file at the specified token
 - Spits the finished files into the output folder
 
 ### Usage
