@@ -1,7 +1,6 @@
 package main
 
 import (
-	"github.com/gomarkdown/markdown"
 	"os"
 	"path/filepath"
 	"io/ioutil"
@@ -12,7 +11,7 @@ import (
 func main() {
 	// Exit if 4 arguments are not given
 	if len(os.Args) < 5 {
-		fmt.Println("USAGE: $ website_builder <markdown folder> <html folder> <template file> <replace token>")
+		fmt.Println("USAGE: $ website_builder <input folder> <output folder> <template file> <replace token>")
 		return
 	}
 
@@ -23,11 +22,11 @@ func main() {
 	template, err := ioutil.ReadFile(os.Args[3])
 	if err != nil {
 		fmt.Println("ERROR: Template file not found or is protected")
-		return	
+		return
 	}
 
 	replaceToken := os.Args[4]
-	
+
 	// Walk through the root directory file by file
 	filepath.Walk(inputFolder, func(path string, info os.FileInfo, err error) error {
 		// Create mirrored folder structure
@@ -38,15 +37,18 @@ func main() {
 			return nil
 		}
 
-		// Generate html file from any markdown file
-		newPath := outputFolder + path[len(inputFolder):len(path)-len(filepath.Ext(path))] + ".html"
-		fmt.Println("Generating " + newPath + "...")
-		md,_ := ioutil.ReadFile(path)
-		html := string(markdown.ToHTML(md, nil, nil))
+		// Grab contents from any *.html file
+		newFile := outputFolder + path[len(inputFolder):len(path)-len(filepath.Ext(path))] + ".html"
+		fmt.Println("Generating " + newFile + "...")
+		content, err := ioutil.ReadFile(path)
+		if err != nil {
+			fmt.Println("ERROR: Cannot access " + path)
+			return nil
+		}
 
-		// Replace the content token with generated HTML
-		output := strings.Replace(string(template), replaceToken, html, 1)	
-		ioutil.WriteFile(newPath, []byte(output), 0644)
+		// Replace the token with HTML
+		output := strings.Replace(string(template), replaceToken, string(content), 1)
+		ioutil.WriteFile(newFile, []byte(output), 0644)
 		return nil
 	})
 }
