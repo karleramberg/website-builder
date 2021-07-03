@@ -3,7 +3,7 @@ Script for building a static site
 - Sticks their content into a template file at the specified token
 - Spits the finished files into the output folder
 
-### Usage
+Usage:
 ```
 $ website_builder <input folder> <output folder> <template file> <replace token>
 ```
