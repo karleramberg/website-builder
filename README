@@ -1,0 +1,10 @@
+Script for building a static site
+- Grabs HTML files from the input folder
+- Sticks their content into a template file at the specified token
+- Spits the finished files into the output folder
+
+Usage: $ website_builder <input folder> <output folder> <template file> <replace token>
+
+
+Example for my webpage: $ website_builder src/ docs/ template.html CONTENT
+
