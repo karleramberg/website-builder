@@ -4,7 +4,7 @@ Script for building a static website
   Spits the finished files into the output folder
 
 Usage
-  $ website_builder <input folder> <output folder> <template file> <replace token>
+  $ website_builder <input folder> <output folder> <template> <token>
 
 Example for my webpage
   $ website_builder src/ docs/ template.html CONTENT
