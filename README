@@ -1,10 +1,10 @@
-Script for building a static website
-  Grabs HTML files from the input folder
-  Sticks their content into a template file at the specified token
-  Spits the finished files into the output folder
+Builds complete HTML pages in an output folder using a template and an input folder of incomplete HTML pages
+
+Install
+  There is an executable in the releases section. Run it as normal.
 
 Usage
   $ website_builder <input folder> <output folder> <template> <token>
 
-Example for my webpage
-  $ website_builder src/ docs/ template.html CONTENT
+Example(s)
+  https://github.com/karlramberg/karlramberg.com
