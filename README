@@ -2,7 +2,7 @@ Builds complete HTML pages in an output folder using a template and an input fol
 
 Install
   There is an executable in the releases section. Run it as normal in a terminal. You may have to give it executable
-  permissions by running 'chmod +x website_builder'.
+  permissions by running chmod.
 
 Usage
   $ website_builder <input folder> <output folder> <template> <token>
