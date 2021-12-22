@@ -1,8 +1,7 @@
 Builds complete HTML pages in an output folder using a template and an input folder of incomplete HTML pages
 
 Install
-  There is an executable in the releases section. Run it as normal in a terminal. You may have to give it executable
-  permissions using chmod.
+  There is an executable in the releases section. Download the *.exe if you are on Windows and the un-extended file if you are on Linux or macOS. Run as you would a normal comamnd in your terminal. You may have to give the file executable permissions.
 
 Usage
   $ website_builder <input folder> <output folder> <template> <token>
