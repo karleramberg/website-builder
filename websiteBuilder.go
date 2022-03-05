@@ -7,10 +7,10 @@
 package main
 
 import (
+	"fmt"
+	"io/ioutil"
 	"os"
 	"path/filepath"
-	"io/ioutil"
-	"fmt"
 	"strings"
 )
 
@@ -33,9 +33,17 @@ func main() {
 
 	token := os.Args[4]
 
+	// Walk through the output folder, deleting any html files
+	filepath.Walk(outputFolder, func(path string, info os.FileInfo, err error) error {
+		if filepath.Ext(path) == ".html" {
+			os.Remove(path)
+		}
+		return nil
+	})
+
 	// Walk through the input folder file by file
 	filepath.Walk(inputFolder, func(path string, info os.FileInfo, err error) error {
-		// If a folder is found, mirror it in the output folder 
+		// If a folder is found, mirror it in the output folder
 		if info.IsDir() {
 			newFolder := outputFolder + path[len(inputFolder):]
 			os.MkdirAll(newFolder, 0755)
