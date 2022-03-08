@@ -34,9 +34,21 @@ func main() {
 	token := os.Args[4]
 
 	// Walk through the output folder, deleting any html files
+	fmt.Println("Clearing " + outputFolder + " of HTML files...")
 	filepath.Walk(outputFolder, func(path string, info os.FileInfo, err error) error {
 		if filepath.Ext(path) == ".html" {
 			os.Remove(path)
+		}
+		return nil
+	})
+
+	// Remove any empty folders in the output folder
+	filepath.Walk(outputFolder, func(path string, info os.FileInfo, err error) error {
+		if info.IsDir() {
+			contents, _ := ioutil.ReadDir(path)
+			if len(contents) == 0 {
+				os.Remove(path)
+			}
 		}
 		return nil
 	})
