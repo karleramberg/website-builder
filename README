@@ -5,7 +5,8 @@ Install
   if you are on Linux or macOS. Run as you would a normal comamnd in your terminal. You may have to give the file executable permissions.
   
   If neither file runs on your system, you can build a new one using Go. Install the Go langauge on your system from
-  https://go.dev/, clone this repository, and run "go build websiteBuilder.go" in your terminal to make a new file for your system's architecture.
+  https://go.dev/, clone this repository, and run "go build websiteBuilder.go" in your terminal to make a new file
+  for your system's architecture.
 
 Usage
   $ website_builder <input folder> <output folder> <template> <token>
