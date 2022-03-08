@@ -43,6 +43,7 @@ func main() {
 	})
 
 	// Remove any empty folders in the output folder
+	fmt.Println("Clearing " + outputFolder + " of empty folders...")
 	filepath.Walk(outputFolder, func(path string, info os.FileInfo, err error) error {
 		if info.IsDir() {
 			contents, _ := ioutil.ReadDir(path)
