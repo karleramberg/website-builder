@@ -21,8 +21,8 @@ func main() {
 		return
 	}
 
-	inputFolder := os.Args[1]
-	outputFolder := os.Args[2]
+	inputFolder := strings.TrimLeft(os.Args[1], "./\\")
+	outputFolder := strings.TrimLeft(os.Args[2], "./\\")
 
 	// Read template into a string
 	template, err := ioutil.ReadFile(os.Args[3])
