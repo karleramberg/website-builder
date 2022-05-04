@@ -47,7 +47,8 @@ func main() {
 
 		// Delete old HTML files
 		filepath.Walk(outputFolder, func(path string, info os.FileInfo, err error) error {
-			if filepath.Ext(path) == ".html" {
+			extension := filepath.Ext(path)
+			if extension == ".html" || extension == ".htm" {
 				os.Remove(path)
 			}
 			return nil
@@ -80,7 +81,8 @@ func main() {
 
 		// If an HTML file is found, generate a completed one
 		// and write it to the same location in the output folder
-		if filepath.Ext(path) == ".html" {
+		extension := filepath.Ext(path)
+		if extension == ".html" || extension == ".htm" {
 			// Read in contents of input file
 			content, err := ioutil.ReadFile(path)
 			if err != nil {
