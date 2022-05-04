@@ -2,7 +2,8 @@ Builds complete HTML pages in an output folder using a template and an input fol
 
 Install
   There are executables in the releases section. Download the .exe file if you are on Windows and the un-extended file
-  if you are on Linux or macOS. Run as you would a normal comamnd in your terminal. You may have to give the file executable permissions.
+  if you are on Linux or macOS. Run as you would a normal comamnd in your terminal. You may have to give the file
+  executable permissions.
   
   If neither file runs on your system, you can build a new one using Go. Install the Go langauge on your system from
   https://go.dev/, clone this repository, and run "go build websiteBuilder.go" in your terminal to make a new file
