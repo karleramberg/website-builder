@@ -1,7 +1,7 @@
 /*
-   Website Builder
-   Author: Karl Ramberg
-   Last modified: May 3, 2022
+	Karl Ramberg
+	Website Builder v4.0
+	websiteBuilder.go
 */
 
 package main
@@ -15,13 +15,13 @@ import (
 )
 
 func main() {
-	// Check that all 5 arguments were given
-	if len(os.Args) != 5 {
-		fmt.Println("USAGE: $ website_builder <input folder> <output folder> <template> <token>")
+	// Check that all 4 arguments were given
+	if len(os.Args) != 4 {
+		fmt.Println("USAGE: $ website_builder <input folder> <output folder> <template>")
 		return
 	}
 
-	// Setup the input folder, check that it exists
+	// Setup the input folder, checking that it exists
 	inputFolder := strings.TrimLeft(os.Args[1], "./\\")
 	_, err := os.Stat(inputFolder)
 	if err != nil && os.IsNotExist(err) {
@@ -29,14 +29,14 @@ func main() {
 		return
 	}
 
-	// Read template into a string, check that it exists
+	// Read template into a string, checking that it exists
 	template, err := ioutil.ReadFile(os.Args[3])
 	if err != nil {
 		fmt.Println("ERROR: Template not found or is protected")
 		return
 	}
 
-	// Setup the output folder, check that it exists, create it if it does not
+	// Setup the output folder, checking that it exists, create it if it does not
 	outputFolder := strings.TrimLeft(os.Args[2], "./\\")
 	_, err = os.Stat(outputFolder)
 	if err != nil && os.IsNotExist(err) {
@@ -66,8 +66,6 @@ func main() {
 		})
 	}
 
-	token := os.Args[4]
-
 	// Walk through the input folder file by file
 	filepath.Walk(inputFolder, func(path string, info os.FileInfo, err error) error {
 		// If a folder is found, mirror it in the output folder
@@ -84,14 +82,18 @@ func main() {
 		extension := filepath.Ext(path)
 		if extension == ".html" || extension == ".htm" {
 			// Read in contents of input file
-			content, err := ioutil.ReadFile(path)
+			input, err := ioutil.ReadFile(path)
 			if err != nil {
 				fmt.Println("ERROR: Cannot access " + path)
 				return nil
 			}
 
-			// Replace the token with content
-			output := strings.Replace(string(template), token, string(content), 1)
+			// Grab the title from the first line and the rest is the content
+			title, content, _ := strings.Cut(string(input), "\n")
+
+			// Replace [TITLE] with page title, [CONTENT] with the content
+			output := strings.Replace(string(template), "[TITLE]", string(title), 1)
+			output = strings.Replace(output, "[CONTENT]", string(content), 1)
 
 			// Genearate the output file's path and write to disk
 			newFile := outputFolder + path[len(inputFolder):]
