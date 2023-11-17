@@ -16,5 +16,5 @@ for your system's architecture.
 ## CLI Usage
   ```$ wb input_folder/ output_folder/ template.html```
 
-### Example website(s)
-  https://github.com/karlramberg/karlramberg.com
+## Example website(s)
+  https://github.com/karlramberg/karlramberg.github.io
