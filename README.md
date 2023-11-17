@@ -1,6 +1,6 @@
 # Website Builder
 
-Website Builder is an application to build complete HTML pages in an output folder using a template and an input folder of incomplete HTML pages.
+Website Builder is a command line application to build complete HTML pages in an output folder using a template and an input folder of incomplete HTML pages.
 
 The first line of an input file is used as a page title, replacing the [TITLE] token in the template. The rest of the file replaces the [CONTENT] token.
 
