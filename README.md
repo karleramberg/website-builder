@@ -17,4 +17,4 @@ for your system's architecture.
   ```$ wb input_folder/ output_folder/ template.html```
 
 ## Example website(s)
-  https://github.com/karlramberg/karlramberg.github.io
+- [karlramberg.github.io](https://github.com/karlramberg/karlramberg.github.io)
