@@ -18,14 +18,14 @@ for your system's architecture.
 
 To learn website builder, simply use the `-h` flag. Which prints...
 
-  ```bash
-  Usage of wb:
-    -i string
-          Input folder of incomplete HTML pages (default "src")
-    -o string
-          Output folder to place complete HTML pages (default "docs")
-    -t string
-          Template HTML page to inject HTML into (default "template.html")
+  ```
+      Usage of .\website-builder.exe:
+            -i string
+                  Input folder of incomplete HTML pages (default "src")
+            -o string
+                  Output folder to place complete HTML pages. This folder is created if it doesn't exist. Existing *.html files, *.htm files, and empty subdirectories in here are deleted! (default "docs")
+            -t string
+                  Template HTML page to inject HTML into (default "template.html")
   ```
 
 ## Example website(s)

@@ -15,7 +15,7 @@ import (
 )
 
 var iFlag = flag.String("i", "src", "Input folder of incomplete HTML pages")
-var oFlag = flag.String("o", "docs", "Output folder to place complete HTML pages")
+var oFlag = flag.String("o", "docs", "Output folder to place complete HTML pages. This folder is created if it doesn't exist. Existing *.html files, *.htm files, and empty subdirectories in here are deleted!")
 var tFlag = flag.String("t", "template.html", "Template HTML page to inject HTML into")
 
 func main() {
