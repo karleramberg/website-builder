@@ -11,12 +11,22 @@ if you are on Linux or macOS. Run as you would a normal comamnd in your terminal
 executable permissions (Using `chmod +x` on Linux/macOS or the "Run as Administrator" function on Windows).
   
 If neither file runs on your system, you can build a new one using Go. Install the Go langauge on your system from
-https://go.dev/. Clone this repository and then run `go build websiteBuilder.go` in your terminal to make a new file
+<https://go.dev/>. Clone this repository and then run `go build websiteBuilder.go` in your terminal to make a new file
 for your system's architecture.
 
-## CLI Usage
+## Usage
 
-  ```$ wb input_folder/ output_folder/ template.html```
+To learn website builder, simply use the `-h` flag. Which prints...
+
+  ```bash
+  Usage of wb:
+    -i string
+          Input folder of incomplete HTML pages (default "src")
+    -o string
+          Output folder to place complete HTML pages (default "docs")
+    -t string
+          Template HTML page to inject HTML into (default "template.html")
+  ```
 
 ## Example website(s)
 

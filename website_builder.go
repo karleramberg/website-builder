@@ -45,6 +45,7 @@ func main() {
 	if err != nil && os.IsNotExist(err) {
 		fmt.Println("> Generating " + *oFlag + "...")
 		os.MkdirAll(*oFlag, 0755)
+
 	} else { // Clean-up the output folder
 		fmt.Println("> Cleaning " + *oFlag + "...")
 
@@ -107,5 +108,5 @@ func main() {
 		return nil
 	})
 
-	fmt.Println("> Site built successfully!")
+	fmt.Println("> Site built successfully! :)")
 }
