@@ -18,7 +18,7 @@ for your system's architecture.
 
 To learn website builder, simply use the `-h` flag. Which prints...
 
-  ```bash
+  ```
   Usage of wb:
     -i string
           Input folder of incomplete HTML pages (default "src")
