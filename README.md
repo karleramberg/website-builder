@@ -11,7 +11,7 @@ if you are on Linux or macOS. Run as you would a normal comamnd in your terminal
 executable permissions (Using `chmod +x` on Linux/macOS or the "Run as Administrator" function on Windows).
   
 If neither file runs on your system, you can build a new one using Go. Install the Go langauge on your system from
-<https://go.dev/>. Clone this repository and then run `go build website_builder.go` in your terminal to make a new file
+<https://go.dev/>. Clone this repository and then run `go build` in your terminal to make a new file
 for your system's architecture.
 
 ## Usage
