@@ -12,7 +12,7 @@ executable permissions (Using `chmod +x` on Linux/macOS or the "Run as Administr
   
 If neither file runs on your system, you can build a new one using Go. Install the Go langauge on your system from
 <https://go.dev/>. Clone this repository and then run `go build` while in the folder to make a new executable
-for your system's architecture.
+for your system's architecture and operating system.
 
 ## Usage
 
