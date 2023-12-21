@@ -1,6 +1,5 @@
-# Website Builder
-
-Website Builder is script to build complete HTML pages in an output folder using a template and an input folder of incomplete HTML pages.
+# Walker
+Walker is a small program to build complete HTML pages in an output folder using a template and an input folder of incomplete HTML pages.
 
 The first line of an input file is used as a page title, replacing the `[TITLE]` token in the template. The rest of the file replaces the `[CONTENT]` token.
 
@@ -16,10 +15,10 @@ for your system's architecture and operating system.
 
 ## Usage
 
-To learn website builder, simply use the `-h` flag. Which prints...
+To learn Walker, simply use the `-h` flag. Which prints...
 
   ```
-    Usage of .\website-builder.exe:
+    Usage of .\walker.exe:
       -i string
         Input folder of incomplete HTML pages (default "src")
       -o string
