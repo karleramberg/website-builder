@@ -1,7 +1,7 @@
 /*
 	Karl Ramberg
-	Website Builder v4.0
-	websiteBuilder.go
+	Walker v4.0
+	walker.go
 */
 
 package main

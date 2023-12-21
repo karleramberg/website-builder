@@ -1,3 +1,3 @@
-module github.com/karlramberg/website-builder
+module github.com/karlramberg/walker
 
 go 1.21.4
