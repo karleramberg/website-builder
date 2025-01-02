@@ -96,8 +96,8 @@ func main() {
 			title, content, _ := strings.Cut(string(input), "\n")
 
 			// Replace any [TITLE] with page title, and the first [CONTENT] with the content
-			output := strings.Replace(output, "[CONTENT]", string(content), 1)
-			output = strings.Replace(string(template), "[TITLE]", string(title), -1)
+			output := strings.Replace(string(template), "[CONTENT]", string(content), 1)
+			output = strings.Replace(output, "[TITLE]", string(title), -1)
 
 			// Genearate the output file's path and write to disk
 			newFile := *oFlag + path[len(*iFlag):]
